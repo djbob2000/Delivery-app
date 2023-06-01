@@ -3,8 +3,8 @@ import { Layout } from "../components/Layout/Layout";
 import { Container } from "./App.styled";
 import { lazy, Suspense } from "react";
 
-const Shop = lazy(() => import("../pages/Shop/Shop"));
-const Cart = lazy(() => import("../pages/Cart/Cart"));
+const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const CartPage = lazy(() => import("../pages/CartPage/CartPage"));
 
 function App() {
   return (
@@ -12,10 +12,9 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Layout />}>
-            {/* <Route index element={<Home />} /> */}
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="*" element={<Home />} />
+            <Route index element={<HomePage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>
       </Container>

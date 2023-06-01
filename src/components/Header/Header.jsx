@@ -1,12 +1,25 @@
-import * as STC from "./Header.styled";
+import { Box, AppBar, Toolbar, Button, Container } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <STC.AppBar>
-      <STC.Nav>
-        <STC.StyledNavLink to="/shop">Shop</STC.StyledNavLink>
-        <STC.StyledNavLink to="/cart">Cart</STC.StyledNavLink>
-      </STC.Nav>
-    </STC.AppBar>
+    <AppBar
+      position="sticky"
+      disablegutters="true"
+      sx={{
+        marginBottom: 4,
+      }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar>
+          <Button component={NavLink} to="/shop" color="inherit">
+            Shop
+          </Button>
+          <Button component={NavLink} to="/cart" color="inherit">
+            Cart
+          </Button>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
