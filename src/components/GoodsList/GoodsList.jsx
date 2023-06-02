@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchGoods } from "../../redux/goods/goods.operations";
 import { resetGoods } from "../../redux/goods/goods.slice";
 import { selectGoods } from "../../redux/selectors";
+import { addToCart } from "../../redux/cart/cart.slice";
+
 import { selectCurrentShopID } from "../../redux/selectors";
 import { Grid, Button, Skeleton, Typography } from "@mui/material";
 
@@ -35,7 +37,17 @@ export const GoodsList = () => {
                 <Typography variant="subtitle1" component="div">
                   Price: {item.price}
                 </Typography>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() =>
+                    dispatch(
+                      addToCart({
+                        ...item,
+                      })
+                    )
+                  }
+                >
                   Add to Cart
                 </Button>
               </div>

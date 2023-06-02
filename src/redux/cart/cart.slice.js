@@ -5,7 +5,8 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: cartInitState,
   reducers: {
-    addGood(state, { payload }) {
+    addToCart(state, { payload }) {
+      console.log("🚀 ~ file: cart.slice.js:9 ~ addToCart ~ payload:", payload);
       const productId = payload.id;
       if (state.cartGoods.hasOwnProperty(productId)) {
         return;
@@ -16,7 +17,7 @@ const cartSlice = createSlice({
     resetCart: (state) => {
       state.cartGoods = [];
     },
-    deleteGood(state, { payload }) {
+    deleteCartGood(state, { payload }) {
       const updatedCartGoods = state.cartGoods.filter(
         (item) => item.id !== payload.id
       );
@@ -24,6 +25,6 @@ const cartSlice = createSlice({
     },
   },
 });
-export const { addGood, resetCart, deleteGood } = cartSlice.actions;
+export const { addToCart, resetCart, deleteCartGood } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;

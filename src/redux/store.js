@@ -1,5 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { goodsReducer } from "./goods/goods.slice";
+import { cartReducer } from "./cart/cart.slice";
+
 import {
   persistStore,
   FLUSH,
@@ -15,6 +17,7 @@ export const store = configureStore({
 
   reducer: {
     goods: goodsReducer,
+    cartGoods: cartReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
