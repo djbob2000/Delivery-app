@@ -17,7 +17,7 @@ export const store = configureStore({
 
   reducer: {
     goods: goodsReducer,
-    cartGoods: cartReducer,
+    cart: cartReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

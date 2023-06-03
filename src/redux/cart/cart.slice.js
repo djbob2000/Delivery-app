@@ -1,14 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { cartInitState } from "./cart.initState";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: cartInitState,
   reducers: {
     addToCart(state, { payload }) {
-      console.log("🚀 ~ file: cart.slice.js:9 ~ addToCart ~ payload:", payload);
       const productId = payload.id;
-      if (state.cartGoods.hasOwnProperty(productId)) {
+      const existingProduct = state.cartGoods.find(
+        (item) => item.id === productId
+      );
+
+      if (existingProduct) {
         return;
       } else {
         state.cartGoods.push(payload);
@@ -18,13 +23,18 @@ const cartSlice = createSlice({
       state.cartGoods = [];
     },
     deleteCartGood(state, { payload }) {
-      const updatedCartGoods = state.cartGoods.filter(
-        (item) => item.id !== payload.id
-      );
-      state.cartGoods = updatedCartGoods;
+      state.cartGoods = state.cartGoods.filter((item) => {
+        return item.id !== payload.id;
+      });
     },
   },
 });
 export const { addToCart, resetCart, deleteCartGood } = cartSlice.actions;
 
-export const cartReducer = cartSlice.reducer;
+const persistConfig = {
+  key: "cartGoods",
+  storage,
+  whitelist: ["cartGoods"],
+};
+
+export const cartReducer = persistReducer(persistConfig, cartSlice.reducer);

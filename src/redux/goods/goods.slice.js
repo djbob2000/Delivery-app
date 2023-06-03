@@ -12,7 +12,6 @@ const goodsSlice = createSlice({
       state.goods = [];
     },
     setCurrentShop: (state, { payload }) => {
-      console.log(payload);
       state.currentShopID = payload;
     },
   },

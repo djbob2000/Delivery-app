@@ -1,41 +1,67 @@
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
 import { deleteCartGood } from "../../redux/cart/cart.slice";
 import { useState } from "react";
+import {
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  Grid,
+  Button,
+  TextField,
+} from "@mui/material";
 
 export const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-
   const [quantity, setQuantity] = useState(1);
 
   const deleteItem = (id) => {
-    dispatch(deleteCartGood(id));
+    dispatch(deleteCartGood({ id }));
   };
+
   return (
-    <>
-      <img src={item.image} alt="{}" />
-      <div>
-        <div>
-          <p> {item.name}</p>
-          <p>{item.price}</p>
-          <input
-            type="number"
-            onChange={setQuantity}
-            step="1"
-            min="1"
-            max="99"
-            id="quantity"
-            name="quantity"
-            value={quantity}
-            pattern="[0-9]*"
-            inputMode="numeric"
-            width="10"
-            height="10"
-          />
-        </div>
-        <button onClick={() => deleteItem(item.id)}>Delete</button>
-      </div>
-    </>
+    <Card>
+      <CardContent>
+        <Grid container spacing={2}>
+          <Grid item>
+            <CardMedia
+              component="img"
+              src={item.image}
+              alt={item.title}
+              style={{ maxWidth: "200px" }}
+            />
+          </Grid>
+
+          <Grid item xs={12} sm container direction="column">
+            <Grid item>
+              <Typography variant="subtitle1">{item.title}</Typography>
+              <Typography variant="subtitle2">$ {item.price}</Typography>
+            </Grid>
+          </Grid>
+
+          <Grid item>
+            <TextField
+              type="number"
+              variant="outlined"
+              size="small"
+              inputProps={{
+                min: 1,
+                max: 99,
+                pattern: "[0-9]*",
+                inputMode: "numeric",
+              }}
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+          </Grid>
+
+          <Grid item>
+            <Button variant="contained" onClick={() => deleteItem(item.id)}>
+              Delete
+            </Button>
+          </Grid>
+        </Grid>
+      </CardContent>
+    </Card>
   );
 };

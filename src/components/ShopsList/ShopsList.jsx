@@ -3,12 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCurrentShop } from "../../redux/goods/goods.slice";
 import { selectCurrentShopID } from "../../redux/selectors";
 import { List, ListItem, Button } from "@mui/material";
-
-const shopsData = [
-  { id: 1, name: "RapidBurger" },
-  { id: 2, name: "TurboTaco" },
-  { id: 3, name: "ExpressPizza" },
-];
+import { shopsData } from "../../constants/shopsData";
 
 export const ShopsList = () => {
   const dispatch = useDispatch();
@@ -16,7 +11,6 @@ export const ShopsList = () => {
   const currentShopID = useSelector(selectCurrentShopID);
 
   const handleShopClick = (shopId) => {
-    console.log(shopId);
     dispatch(setCurrentShop(shopId));
   };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -12,66 +12,71 @@ const validationSchema = Yup.object({
 
 const handleSubmit = (values) => {
   // Handle form submission logic
-  console.log(values);
 };
 
 export const OrderForm = () => {
   return (
-    <Formik
-      initialValues={{
-        name: "",
-        email: "",
-        phone: "",
-        address: "",
-      }}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      <Form autoComplete="off">
-        <Field
-          name="name"
-          type="text"
-          as={TextField}
-          label="Name"
-          variant="outlined"
-          fullWidth
-        />
-        <ErrorMessage name="name" component="div" />
+    <Box maxWidth="350px">
+      <Formik
+        initialValues={{
+          name: "",
+          email: "",
+          phone: "",
+          address: "",
+        }}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        <Form autoComplete="off">
+          <Field
+            name="name"
+            type="text"
+            as={TextField}
+            label="Name"
+            variant="outlined"
+            fullWidth
+            style={{ marginBottom: "1rem" }}
+          />
+          <ErrorMessage name="name" component={Box} sx={{ color: "red" }} />
 
-        <Field
-          name="email"
-          type="email"
-          as={TextField}
-          label="Email"
-          variant="outlined"
-          fullWidth
-        />
-        <ErrorMessage name="email" component="div" />
+          <Field
+            name="email"
+            type="email"
+            as={TextField}
+            label="Email"
+            variant="outlined"
+            fullWidth
+            style={{ marginBottom: "1rem" }}
+          />
+          <ErrorMessage name="email" component={Box} sx={{ color: "red" }} />
 
-        <Field
-          name="phone"
-          type="number"
-          as={TextField}
-          label="Phone"
-          variant="outlined"
-          fullWidth
-        />
-        <ErrorMessage name="phone" component="div" />
+          <Field
+            name="phone"
+            type="number"
+            as={TextField}
+            label="Phone"
+            variant="outlined"
+            fullWidth
+            style={{ marginBottom: "1rem" }}
+          />
+          <ErrorMessage name="phone" component={Box} sx={{ color: "red" }} />
 
-        <Field
-          name="address"
-          type="text"
-          as={TextField}
-          label="Address"
-          variant="outlined"
-          fullWidth
-        />
-        <ErrorMessage name="address" component="div" />
+          <Field
+            name="address"
+            type="text"
+            as={TextField}
+            label="Address"
+            variant="outlined"
+            fullWidth
+            style={{ marginBottom: "1rem" }}
+          />
+          <ErrorMessage name="address" component={Box} sx={{ color: "red" }} />
 
-        <Button type="submit" variant="contained" color="primary">
-          Submit
-        </Button>
-      </Form>
-    </Formik>
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
+        </Form>
+      </Formik>
+    </Box>
   );
 };

@@ -11,7 +11,6 @@ import { Grid, Button, Skeleton, Typography } from "@mui/material";
 export const GoodsList = () => {
   const dispatch = useDispatch();
   const selectedGoods = useSelector(selectGoods);
-  console.log("selectedGoods==", selectedGoods);
   const currentShopID = useSelector(selectCurrentShopID);
 
   useEffect(() => {
