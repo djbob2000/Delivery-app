@@ -12,11 +12,12 @@ const validationSchema = Yup.object({
 
 const handleSubmit = (values) => {
   // Handle form submission logic
+  console.log(values);
 };
 
 export const OrderForm = () => {
   return (
-    <Box maxWidth="350px">
+    <Box sx={{ maxWidth: "350px", mt: "1rem" }}>
       <Formik
         initialValues={{
           name: "",
@@ -27,7 +28,7 @@ export const OrderForm = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form autoComplete="off">
+        <Form autoComplete="off" id="formOrder">
           <Field
             name="name"
             type="text"
@@ -71,10 +72,6 @@ export const OrderForm = () => {
             style={{ marginBottom: "1rem" }}
           />
           <ErrorMessage name="address" component={Box} sx={{ color: "red" }} />
-
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
         </Form>
       </Formik>
     </Box>

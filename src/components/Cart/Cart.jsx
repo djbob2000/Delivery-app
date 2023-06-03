@@ -19,7 +19,7 @@ export const Cart = () => {
     <>
       {selectedCartGoodsByShopId.length ? (
         <>
-          <Box sx={{ marginBottom: "16px" }}>
+          <Box sx={{ mb: 4 }}>
             Your current store is{" "}
             <strong>{currentShop ? currentShop.name : "Unknown"}</strong>. If
             you need another, select it on the shop page.
@@ -27,6 +27,10 @@ export const Cart = () => {
           <Box display="flex">
             <OrderForm />
             <CartList items={selectedCartGoodsByShopId} />
+          </Box>
+          <Box display="flex" justifyContent="flex-end" gap="1rem">
+            <TotalPrice />
+            <OrderButton />
           </Box>
         </>
       ) : (
