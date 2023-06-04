@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetOrders } from "../../redux/orders/orders.slice";
 import { fetchOrders } from "../../redux/orders/orders.operations";
 import { selectOrders } from "../../redux/selectors";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { HistoryList } from "../HistoryList/HistoryList";
 
 export const History = () => {
