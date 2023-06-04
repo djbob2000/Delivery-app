@@ -1,4 +1,4 @@
-#Test task "Delivery app"
+# Test task "Delivery app"
 
 ## Technologies
 
@@ -29,7 +29,8 @@ $ npm start
 There are three complexity levels: base, middle and advanced.
 The base level is sufficient to pass the test task stage. Still, accomplished tasks with a harder level of complexity will highly increase your chance of getting to the school.
 
-Description:
+### Description:
+
 The Food Delivery app should consist of two pages:
 
 - the shops page and
@@ -42,26 +43,29 @@ The Food Delivery app should consist of two pages:
   design style.
 - The back-end part can be done with or without any framework.
   Web application where users can order food delivery
-  +13025432012 info@eliftech.com www.eliftech.com
 
-  Base level:
+#### Base level:
 
-  - The page where users can choose a shop, then add goods to the cart (get data from the database)
+- The page where users can choose a shop, then add goods to the cart (get data from the database)
 
-  Shopping cart page:
+Shopping cart page:
 
-  - The page where the user can check all added products, remove some of them or change the count. And add an email, a phone number, and an address (in inputs)
+- The page where the user can check all added products, remove some of them or change the count. And add an email, a phone number, and an address (in inputs)
 
 - The order should be saved in the database after the user clicks the “submit” button
-  Middle level:
+
+  #### Middle level:
+
   Shops page:
+
 - Everything from the base level
 - Users can order products only from one shop (for example, if the user chooses
   McDonald's. Then you need to disable other shops.)
   Shopping cart page:
 - Everything from the base level
 
-  Advanced level:
+  #### Advanced level:
+
   Shops page:
 
 - The cart should be saved in local storage.
@@ -79,6 +83,6 @@ The Food Delivery app should consist of two pages:
 
   - users can find their orders on this page using their email and phone number, or order id
 
-Coupons page:
+#### Coupons page:
 
 - create a page where users can see all coupons (coupons will be used for discounts, users can apply them on the shopping cart page)

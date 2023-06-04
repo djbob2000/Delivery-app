@@ -12,7 +12,6 @@ export const Header = () => {
   return (
     <AppBar
       position="sticky"
-      disableGutters="true"
       sx={{
         marginBottom: 4,
       }}
@@ -30,8 +29,12 @@ export const Header = () => {
                   <Button
                     component={NavLink}
                     to="/"
-                    color="inherit"
-                    sx={{ "&:active": { color: "yellow" } }}
+                    sx={{
+                      color: "inherit",
+                      "&.active": {
+                        color: "yellow",
+                      },
+                    }}
                   >
                     Shop
                   </Button>
@@ -40,8 +43,12 @@ export const Header = () => {
                   <Button
                     component={NavLink}
                     to="/cart"
-                    color="inherit"
-                    sx={{ "&:active": { color: "yellow" } }}
+                    sx={{
+                      color: "inherit",
+                      "&.active": {
+                        color: "yellow",
+                      },
+                    }}
                   >
                     Cart
                   </Button>
@@ -50,8 +57,12 @@ export const Header = () => {
                   <Button
                     component={NavLink}
                     to="/history"
-                    color="inherit"
-                    sx={{ "&:active": { color: "yellow" } }}
+                    sx={{
+                      color: "inherit",
+                      "&.active": {
+                        color: "yellow",
+                      },
+                    }}
                   >
                     History
                   </Button>

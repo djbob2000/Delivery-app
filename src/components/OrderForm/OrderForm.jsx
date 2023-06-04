@@ -56,7 +56,11 @@ export const OrderForm = () => {
             fullWidth
             style={{ marginBottom: "1rem" }}
           />
-          <ErrorMessage name="name" component={Box} sx={{ color: "red" }} />
+          <ErrorMessage
+            name="name"
+            component={Box}
+            sx={{ color: "red", position: "relative", top: "-16px" }}
+          />
 
           <Field
             name="email"
@@ -67,7 +71,11 @@ export const OrderForm = () => {
             fullWidth
             style={{ marginBottom: "1rem" }}
           />
-          <ErrorMessage name="email" component={Box} sx={{ color: "red" }} />
+          <ErrorMessage
+            name="email"
+            component={Box}
+            sx={{ color: "red", position: "relative", top: "-16px" }}
+          />
 
           <Field
             name="phone"
@@ -78,7 +86,11 @@ export const OrderForm = () => {
             fullWidth
             style={{ marginBottom: "1rem" }}
           />
-          <ErrorMessage name="phone" component={Box} sx={{ color: "red" }} />
+          <ErrorMessage
+            name="phone"
+            component={Box}
+            sx={{ color: "red", position: "relative", top: "-16px" }}
+          />
 
           <Field
             name="address"
@@ -89,7 +101,11 @@ export const OrderForm = () => {
             fullWidth
             style={{ marginBottom: "1rem" }}
           />
-          <ErrorMessage name="address" component={Box} sx={{ color: "red" }} />
+          <ErrorMessage
+            name="address"
+            component={Box}
+            sx={{ color: "red", position: "relative", top: "-16px" }}
+          />
         </Form>
       </Formik>
     </Box>
