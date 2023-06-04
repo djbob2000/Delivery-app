@@ -8,7 +8,7 @@ export const Home = () => {
       <Box display="flex">
         <ShopsList />
         <GoodsList />
-      </Box>{" "}
+      </Box>
     </>
   );
 };

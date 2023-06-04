@@ -1,6 +1,34 @@
-Delivery app
+#Test task "Delivery app"
+
+## Technologies
+
+Project is created with:
+
+- React
+- Redux Toolkit
+- React router
+- Redux persist
+- Formik
+- Yup
+- Axios
+- @ MUI/@emotion
+- Toastify
+
+## Setup
+
+To run this project, install it locally using npm:
+
+```
+$ cd ../delivery-app
+$ npm install
+$ npm start
+```
+
+## About task
+
 There are three complexity levels: base, middle and advanced.
 The base level is sufficient to pass the test task stage. Still, accomplished tasks with a harder level of complexity will highly increase your chance of getting to the school.
+
 Description:
 The Food Delivery app should consist of two pages:
 

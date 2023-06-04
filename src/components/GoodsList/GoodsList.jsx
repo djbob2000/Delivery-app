@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGoods } from "../../redux/goods/goods.operations";
 import { resetGoods } from "../../redux/goods/goods.slice";
 import { selectGoods } from "../../redux/selectors";
 import { addToCart } from "../../redux/cart/cart.slice";
-
+import { toast } from "react-toastify";
 import { selectCurrentShopID } from "../../redux/selectors";
 import { Grid, Button, Skeleton, Typography } from "@mui/material";
 
@@ -39,13 +39,10 @@ export const GoodsList = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={() =>
-                    dispatch(
-                      addToCart({
-                        ...item,
-                      })
-                    )
-                  }
+                  onClick={() => {
+                    dispatch(addToCart({ ...item }));
+                    toast.success("Order added to cart successfully");
+                  }}
                 >
                   Add to Cart
                 </Button>

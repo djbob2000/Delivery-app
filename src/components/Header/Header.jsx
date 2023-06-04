@@ -1,5 +1,4 @@
 import {
-  Box,
   AppBar,
   Toolbar,
   Button,
@@ -13,7 +12,7 @@ export const Header = () => {
   return (
     <AppBar
       position="sticky"
-      disablegutters="true"
+      disableGutters="true"
       sx={{
         marginBottom: 4,
       }}
@@ -30,7 +29,7 @@ export const Header = () => {
                 <ListItem>
                   <Button
                     component={NavLink}
-                    to="/shop"
+                    to="/"
                     color="inherit"
                     sx={{ "&:active": { color: "yellow" } }}
                   >
@@ -45,6 +44,16 @@ export const Header = () => {
                     sx={{ "&:active": { color: "yellow" } }}
                   >
                     Cart
+                  </Button>
+                </ListItem>
+                <ListItem>
+                  <Button
+                    component={NavLink}
+                    to="/history"
+                    color="inherit"
+                    sx={{ "&:active": { color: "yellow" } }}
+                  >
+                    History
                   </Button>
                 </ListItem>
               </List>

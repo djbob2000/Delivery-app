@@ -1,18 +1,16 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   deleteCartGood,
   incrementQuantity,
   decrementQuantity,
   setQuantity,
 } from "../../redux/cart/cart.slice";
-import { useState } from "react";
 import {
   Typography,
   Card,
   CardMedia,
   CardContent,
   Grid,
-  Button,
   IconButton,
   TextField,
 } from "@mui/material";

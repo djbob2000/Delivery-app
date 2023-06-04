@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentShop } from "../../redux/goods/goods.slice";
 import { selectCurrentShopID } from "../../redux/selectors";

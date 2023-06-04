@@ -25,6 +25,10 @@ const goodsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.goods = payload;
+      })
+      .addCase(fetchGoods.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
       });
   },
 });

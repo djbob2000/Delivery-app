@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { goodsReducer } from "./goods/goods.slice";
 import { cartReducer } from "./cart/cart.slice";
+import { ordersReducer } from "./orders/orders.slice";
 
 import {
   persistStore,
@@ -18,6 +19,7 @@ export const store = configureStore({
   reducer: {
     goods: goodsReducer,
     cart: cartReducer,
+    orders: ordersReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
