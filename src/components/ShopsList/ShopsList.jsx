@@ -15,22 +15,20 @@ export const ShopsList = () => {
 
   return (
     <>
-      <div>
-        <List>
-          {shopsData.map((shop) => (
-            <ListItem key={shop.id}>
-              <Button
-                onClick={() => handleShopClick(shop.id)}
-                sx={{
-                  color: currentShopID === shop.id ? "primary.main" : "inherit",
-                }}
-              >
-                {shop.name}
-              </Button>
-            </ListItem>
-          ))}
-        </List>
-      </div>
+      <List>
+        {shopsData.map((shop) => (
+          <ListItem key={shop.id}>
+            <Button
+              onClick={() => handleShopClick(shop.id)}
+              sx={{
+                color: currentShopID === shop.id ? "primary.main" : "inherit",
+              }}
+            >
+              {shop.name}
+            </Button>
+          </ListItem>
+        ))}
+      </List>
     </>
   );
 };

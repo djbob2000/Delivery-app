@@ -11,7 +11,7 @@ Project is created with:
 - Formik
 - Yup
 - Axios
-- @ MUI/@emotion
+- @ MUI / styled
 - Toastify
 
 ## Setup

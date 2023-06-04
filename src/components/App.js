@@ -4,7 +4,6 @@ import { Container } from "./App.styled";
 import { lazy, Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import HistoryPage from "../pages/HistoryPage/HistoryPage.js";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const CartPage = lazy(() => import("../pages/CartPage/CartPage"));

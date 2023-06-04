@@ -1,7 +1,7 @@
-import { Grid, Button, Skeleton, Typography } from "@mui/material";
+import { Button, Skeleton, Typography } from "@mui/material";
 import { toast } from "react-toastify";
 import { addToCart } from "../../redux/cart/cart.slice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export const GoodsItem = ({ item }) => {
   const dispatch = useDispatch();
